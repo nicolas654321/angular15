@@ -7,6 +7,13 @@
     <div>
       <label>Email : </label>
       <input type="text" formControlName="email">
+      {{ userForm.get('credential.email').errors?.mail.rules }}
+
+      <div *ngIf="userForm.get('credential.email').errors && !userForm.get('credential.email').pristine" class="error-msg">
+        <div [hidden]="!userForm.get('credential.email').errors.required">email is required.</div>
+        <div [hidden]="!userForm.get('credential.email').invalid">email is invalid.</div>
+    </div>
+
     </div>
     <div>
       <label>Mot de passe : </label>
