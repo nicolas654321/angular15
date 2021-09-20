@@ -1,0 +1,40 @@
+<form [formGroup] = "userForm" (ngSubmit)="valide()">
+  <div>
+    <label>Nom : </label>
+    <input type="text" formControlName="username">
+  </div>
+  <div formGroupName="credential">
+    <div>
+      <label>Email : </label>
+      <input type="text" formControlName="email">
+    </div>
+    <div>
+      <label>Mot de passe : </label>
+      <input type="text" formControlName="motDePasse">
+    </div>
+  </div>
+  <div>
+    <label>Adresse : </label>
+    <input type="text" formControlName="adresse">
+  </div>
+  <div>
+    <button type="submit">Valider</button>
+  </div>
+</form>
+
+<div *ngIf="monUser !==null">
+  <div>
+    {{ monUser.username }}
+  </div>
+  <div>
+    {{ monUser.email }}
+  </div>
+  <div>
+    {{ monUser.motDePass }}
+  </div>
+  <div>
+    {{ monUser.adresse }}
+  </div>
+
+
+</div>
